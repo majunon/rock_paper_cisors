@@ -6,10 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Cissors</title>
     <script>
+        function computerPlay(){
+            let rnd=Math.ceil(Math.random()*3);
+            if(rnd==1){
+                return("Rock");
+            }
+            else if(rnd==2){
+                return("Paper");
+            }
+            else if(rnd==3){
+                return("Scissors");
+            }
+        }
         
+        function playRound(){
+            let playerSelection=prompt("Rock/Paper/Scissors ?");
+            let computerSelection=computerPlay();
+
+            playerSelection=playerSelection.toLowerCase();
+
+            switch (playerSelection){
+                case 'rock':
+                    if(computerSelection=='Scissors'){
+                        console.log("You win! Rock beats Scissors");
+                        return(1);
+                    }
+                    else if(computerSelection=='Paper'){
+                        console.log("You lose! Paper beats Rock");
+                        return(-1);
+                    }
+                    else{
+                        console.log("It's a tie!");
+                        return(0);
+                    }
+                break;
+                case 'paper':
+                    if(computerSelection=='Scissors'){
+                        console.log("You lose! Scissors beats Paper");
+                        return(-1);
+                    }
+                    else if(computerSelection=='Paper'){
+                        console.log("It's a tie");
+                        return(0);
+                    }
+                    else{
+                        console.log("You win! Paper beats Rock");
+                        return(1);
+                    }
+                break;
+                case 'scissors':
+                    if(computerSelection=='Scissors'){
+                        console.log("It's a tie!");
+                        return(0);
+                    }
+                    else if(computerSelection=='Paper'){
+                        console.log("You win! Scissors beats Paper");
+                        return(1);
+                    }
+                    else{
+                        console.log("You lose! Rock beats Scissors");
+                        return(-1);
+                    }
+                break;
+                default:
+                console.log("I can't understand your selection");
+            }
+        }
+
+
     </script>
 </head>
 <body>
-    
+    <button id="rock">rock</button>
+    <button id="paper">paper</button>
+    <button id="scissors">scissors</button>    
 </body>
 </html>
