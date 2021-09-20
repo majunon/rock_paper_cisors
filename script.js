@@ -12,39 +12,43 @@ function computerPlay(){
 }
 
 const buttons = document.querySelectorAll('button');
+
 buttons.forEach(button => button.addEventListener('click',function(e){
   let computerSelection = computerPlay();
+  let result = document.querySelector("#result");
+  let score = document.querySelector('#score');
+
   if(this.id==='rock'){
     if(computerSelection === 'rock'){
-      console.log("It's a tie!");
+      result.textContent="It's a tie!";
     }
     else if(computerSelection === 'paper'){
-      console.log("You lose! Paper beats rock.")
+      result.textContent="You lose! Paper beats rock.";
     }
     else {
-      console.log("You win! Rock beats scissors.")
+      result.textContent="You win! Rock beats scissors.";
     }
   }
   else if(this.id==='paper'){
     if(computerSelection === 'rock'){
-      console.log("You win! Paper beats rock.");
+      result.textContent="You win! Paper beats rock.";
     }
     else if(computerSelection === 'paper'){
-      console.log("It's a tie!")
+      result.textContent="It's a tie!";
     }
     else {
-      console.log("You lose! Scissors beat paper.")
+      result.textContent="You lose! Scissors beat paper.";
     }
   }
   else {
     if(computerSelection === 'rock'){
-      console.log("You lose! Rock beats scissors.");
+      result.textContent="You lose! Rock beats scissors.";
     }
     else if(computerSelection === 'paper'){
-      console.log("You win! Scissors beat paper.")
+      result.textContent="You win! Scissors beat paper.";
     }
     else {
-      console.log("It's a tie!")
+      result.textContent="It's a tie!";
     }
   }
 }));
