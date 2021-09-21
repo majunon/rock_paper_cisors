@@ -24,49 +24,49 @@ buttons.forEach(button => button.addEventListener('click',function(e){
 
   if(this.id==='rock'){
     if(computerSelection === 'rock'){
-      result.textContent="It's a tie!";
+      result.textContent="Egalité!";
     }
     else if(computerSelection === 'paper'){
-      result.textContent="You lose this round! Paper beats rock.";
+      result.textContent="Perdu ! Le papier bat la pierre...";
       scoreComputer++;
     }
     else {
-      result.textContent="You win this round! Rock beats scissors.";
+      result.textContent="Gagné ! La pierre bat les ciseaux !";
       scorePlayer++;
     }
   }
   else if(this.id==='paper'){
     if(computerSelection === 'rock'){
-      result.textContent="You win this round! Paper beats rock.";
+      result.textContent="Bravo! Le papier bat la pierre !";
       scorePlayer++;
     }
     else if(computerSelection === 'paper'){
-      result.textContent="It's a tie!";
+      result.textContent="Egalité...!";
     }
     else {
-      result.textContent="You lose this round! Scissors beat paper.";
+      result.textContent="Perdu ! Les ciseaux coupent le papier.";
       scoreComputer++;
     }
   }
   else {
     if(computerSelection === 'rock'){
-      result.textContent="You lose this round! Rock beats scissors.";
+      result.textContent="Perdu ! La pierre est plus forte que les ciseaux.";
       scoreComputer++;
     }
     else if(computerSelection === 'paper'){
-      result.textContent="You win this round! Scissors beat paper.";
+      result.textContent="Gagné ! Les ciseaux coupent le papier";
       scorePlayer++;
     }
     else {
-      result.textContent="It's a tie!";
+      result.textContent="Egalité !";
     }
   }
-  score.textContent=`Player ${scorePlayer} -- ${scoreComputer} Computer`;
+  score.textContent=`Vous ${scorePlayer} -- ${scoreComputer} L'ordinateur`;
   if (scorePlayer>=5){
-    winner.textContent="You win this match!!!";
+    winner.textContent="Vous avez gagné le match !!!";
   }
   else if(scoreComputer>=5){
-    winner.textContent="You lose this match !!!";
+    winner.textContent="Vous avez perdu le match...";
   }
 }));
 
