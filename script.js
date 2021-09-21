@@ -22,51 +22,53 @@ buttons.forEach(button => button.addEventListener('click',function(e){
   let score = document.querySelector('#score');
   let winner = document.querySelector('#winner');
 
-  if(this.id==='rock'){
-    if(computerSelection === 'rock'){
-      result.textContent="Egalité!";
+  if(scorePlayer<5 && scoreComputer<5){
+    if(this.id==='rock'){
+      if(computerSelection === 'rock'){
+        result.textContent="Egalité!";
+      }
+      else if(computerSelection === 'paper'){
+        result.textContent="Perdu ! Le papier bat la pierre...";
+        scoreComputer++;
+      }
+      else {
+        result.textContent="Gagné ! La pierre bat les ciseaux !";
+        scorePlayer++;
+      }
     }
-    else if(computerSelection === 'paper'){
-      result.textContent="Perdu ! Le papier bat la pierre...";
-      scoreComputer++;
-    }
-    else {
-      result.textContent="Gagné ! La pierre bat les ciseaux !";
-      scorePlayer++;
-    }
-  }
-  else if(this.id==='paper'){
-    if(computerSelection === 'rock'){
-      result.textContent="Bravo! Le papier bat la pierre !";
-      scorePlayer++;
-    }
-    else if(computerSelection === 'paper'){
-      result.textContent="Egalité...!";
-    }
-    else {
-      result.textContent="Perdu ! Les ciseaux coupent le papier.";
-      scoreComputer++;
-    }
-  }
-  else {
-    if(computerSelection === 'rock'){
-      result.textContent="Perdu ! La pierre est plus forte que les ciseaux.";
-      scoreComputer++;
-    }
-    else if(computerSelection === 'paper'){
-      result.textContent="Gagné ! Les ciseaux coupent le papier";
-      scorePlayer++;
+    else if(this.id==='paper'){
+      if(computerSelection === 'rock'){
+        result.textContent="Bravo! Le papier bat la pierre !";
+        scorePlayer++;
+      }
+      else if(computerSelection === 'paper'){
+        result.textContent="Egalité...!";
+      }
+      else {
+        result.textContent="Perdu ! Les ciseaux coupent le papier.";
+        scoreComputer++;
+      }
     }
     else {
-      result.textContent="Egalité !";
+      if(computerSelection === 'rock'){
+        result.textContent="Perdu ! La pierre est plus forte que les ciseaux.";
+        scoreComputer++;
+      }
+      else if(computerSelection === 'paper'){
+        result.textContent="Gagné ! Les ciseaux coupent le papier";
+        scorePlayer++;
+      }
+      else {
+        result.textContent="Egalité !";
+      }
     }
-  }
-  score.textContent=`Vous ${scorePlayer} -- ${scoreComputer} L'ordinateur`;
-  if (scorePlayer>=5){
-    winner.textContent="Vous avez gagné le match !!!";
-  }
-  else if(scoreComputer>=5){
-    winner.textContent="Vous avez perdu le match...";
+    score.textContent=`Vous ${scorePlayer} -- ${scoreComputer} L'ordinateur`;
+    if (scorePlayer>=5){
+      winner.textContent="Vous avez gagné le match !!!";
+    }
+    else if(scoreComputer>=5){
+      winner.textContent="Vous avez perdu le match...";
+    }
   }
 }));
 
