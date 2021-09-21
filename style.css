@@ -3,21 +3,22 @@
 h1{
   font-family: 'Coustard', serif;
   text-align: center;
-  font-size: 80px;
+  font-size: 30px;
+  margin:5px;
 }
 
 h2{
   font-family: 'Coustard', serif;
   font-weight: 100;
   text-align: center;
-  font-size: 30px;
-  padding-bottom: 50px;;
+  font-size: 20px;
+  padding-bottom: 0px;;
 }
 
 #rock{
   background-image: url(images/rock.png);
   width:300px;
-  height: 300px;
+  height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
   background-color:transparent;
@@ -28,7 +29,7 @@ h2{
 #paper{
   background-image: url(images/paper.png);
   width:300px;
-  height: 300px;
+  height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
   background-color:transparent;
@@ -39,7 +40,7 @@ h2{
 #scissors{
   background-image: url(images/scissors.png);
   width:300px;
-  height: 300px;
+  height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
   background-color:transparent;
@@ -59,6 +60,6 @@ h2{
   text-align: center;
 
   font-family: 'Coustard', serif;
-  font-size: 30px;
-  padding-top: 50px;;
+  font-size: 15px;
+  padding-top: 15px;;
 }
